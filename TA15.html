@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="input" type="text">
+    <button id="button" onclick="aniadir()">Añadir elemento</button>
+    <button id="eliminarBtn" onclick="eliminar()">Eliminar ultimo elemento</button>
+    <ul id="lista">
+    </ul>
+
+    <script>
+        function aniadir() {
+            const li = document.createElement("li")
+            li.innerHTML = document.getElementById("input").value            
+            document.getElementById("lista").appendChild(li);
+        }
+
+        function eliminar() {
+            const lista = document.getElementById("lista");
+            lista.removeChild(lista.lastChild);
+        }
+    </script>
+</body>
+
+</html>
