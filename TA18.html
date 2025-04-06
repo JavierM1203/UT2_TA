@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="searchInput">
+    <ul id="peopleList"></ul>
+
+    <script>
+        const people = [
+            "Ana",
+            "Bruno",
+            "Carlos",
+            "Diana",
+            "Esteban",
+            "Fernanda",
+            "Gabriel",
+            "Helena"
+        ];
+
+        const searchInput = document.getElementById('searchInput');
+        const peopleList = document.getElementById('peopleList');
+
+        function renderList(filteredPeople) {
+            peopleList.innerHTML = filteredPeople
+                .map(person => `<li>${person}</li>`)
+                .join('');
+        }
+
+        renderList(people)
+
+        searchInput.addEventListener('input', () => {
+            const searchText = searchInput.value.toLowerCase();
+            const filteredPeople = people.filter(person =>
+                person.toLowerCase().includes(searchText)
+            );
+            renderList(filteredPeople);
+        });
+    </script>
+</body>
+
+</html>

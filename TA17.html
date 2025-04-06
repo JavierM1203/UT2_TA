@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function incrementar() {
+            var num = Number(document.getElementById("cont").textContent)
+            num += 1
+            document.getElementById("cont").textContent = num
+        }
+    </script>
+</head>
+<body>
+    <p id="cont">0</p>
+    <button id="inc" onclick="incrementar()">Incrementar</button>
+</body>
+</html>
